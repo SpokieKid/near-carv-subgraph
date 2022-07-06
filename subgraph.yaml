@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -7,11 +7,12 @@ dataSources:
     network: near-mainnet
     source:
       account: "events.carv.near"
+      startBlock: 68859476
     mapping:
       apiVersion: 0.0.5
       language: wasm/assemblyscript
       entities:
-        - ExampleEntity
+        - UserNftStat
       receiptHandlers:
         - handler: handleReceipt
       file: ./src/mapping.ts

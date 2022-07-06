@@ -1,5 +1,28 @@
-type ExampleEntity @entity {
-  id: ID!
-  block: Bytes!
-  count: BigInt!
+type UserNftStat @entity {
+  id: String!  # <contract address>-<user address>
+  nftContract: String!
+  userAddress: String!
+  nftsIn: String!
+  nftsOut: BigInt!
+  nftsMinted: BigInt!
+  nftsBurnt: BigInt!
+  firstTs: BigInt!
+}
+
+type NftContractStat @entity {
+  id: String!  # <nft contract>
+  nftsTransferred: BigInt!
+  nftsMinted: BigInt!
+  nftsBurnt: BigInt!
+  firstTs: BigInt!
+}
+
+type NftTokenStat @entity {
+  id: String!  # <nft contract>-<token id>
+  nftContract: String!
+  nftTokenId: BigInt!
+  nftsTransferred: BigInt!
+  nftsMinted: BigInt!
+  nftsBurnt: BigInt!
+  firstTs: BigInt!
 }
